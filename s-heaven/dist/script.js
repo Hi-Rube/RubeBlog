@@ -12,9 +12,9 @@ var _child_process2 = _interopRequireDefault(_child_process);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const getDailyFromGithub = exports.getDailyFromGithub = () => {
-    _child_process2.default.execSync(`cd ${ __dirname }/../store | git pull origin master`);
+    _child_process2.default.execSync(`cd ${ __dirname }/../store/doc && git pull origin master`);
 };
 
 const updateDailyToGithub = exports.updateDailyToGithub = time => {
-    _child_process2.default.execSync(`cd ${ __dirname }/../store | git commit -a "${ time }" | git push origin master`);
+    _child_process2.default.execSync(`cd ${ __dirname }/../store/doc && git commit -a "${ time }" | git push origin master`);
 };

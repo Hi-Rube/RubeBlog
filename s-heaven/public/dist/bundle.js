@@ -2860,7 +2860,7 @@
 	//         <div class="mod mod-daily">
 	//             <div
 	//                 v-for="n in allDay" v-on:click="onSelectDaily(n+1)"
-	//                 v-bind:class="n==day ? classA : classB"
+	//                 v-bind:class="n+1==day ? classA : classB"
 	//             >{{n+1}}</div>
 	//         </div>
 	//         <div class="clear"></div>
@@ -2905,7 +2905,7 @@
 	        onMonthChanged: () => {},
 	        onYearChanged: () => {},
 	        onSelectDaily: function onSelectDaily(day) {
-	            this.$set('day', day - 1);
+	            this.$set('day', day);
 	            let year = this.year,
 	                month = this.month < 10 ? '0' + this.month : this.month;
 
@@ -2934,7 +2934,7 @@
 /* 6 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div>\n    <select v-model=\"year\" v-on:change=\"onYearChanged\">\n        <option>2015</option>\n        <option>2016</option>\n        <option>2017</option>\n        <option>2018</option>\n        <option>2019</option>\n        <option>2020</option>\n    </select>\n    <select v-model=\"month\" v-on:change=\"onMonthChanged\">\n        <option v-for=\"n in 12\" value={{n+1}}>{{n+1}}</option>\n    </select>\n    <div class=\"mod mod-daily\">\n        <div \n            v-for=\"n in allDay\" v-on:click=\"onSelectDaily(n+1)\"\n            v-bind:class=\"n==day ? classA : classB\"\n        >{{n+1}}</div>\n    </div>\n    <div class=\"clear\"></div>\n    <div class=\"mod mod-content\">\n        {{{dailyContent}}}\n    </div>\n</div>\n";
+	module.exports = "\n<div>\n    <select v-model=\"year\" v-on:change=\"onYearChanged\">\n        <option>2015</option>\n        <option>2016</option>\n        <option>2017</option>\n        <option>2018</option>\n        <option>2019</option>\n        <option>2020</option>\n    </select>\n    <select v-model=\"month\" v-on:change=\"onMonthChanged\">\n        <option v-for=\"n in 12\" value={{n+1}}>{{n+1}}</option>\n    </select>\n    <div class=\"mod mod-daily\">\n        <div \n            v-for=\"n in allDay\" v-on:click=\"onSelectDaily(n+1)\"\n            v-bind:class=\"n+1==day ? classA : classB\"\n        >{{n+1}}</div>\n    </div>\n    <div class=\"clear\"></div>\n    <div class=\"mod mod-content\">\n        {{{dailyContent}}}\n    </div>\n</div>\n";
 
 /***/ },
 /* 7 */
