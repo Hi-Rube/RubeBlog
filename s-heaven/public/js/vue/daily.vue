@@ -14,7 +14,7 @@
         <div class="mod mod-daily">
             <div 
                 v-for="n in allDay" v-on:click="onSelectDaily(n+1)"
-                v-bind:class="n==day ? classA : classB"
+                v-bind:class="n+1==day ? classA : classB"
             >{{n+1}}</div>
         </div>
         <div class="clear"></div>
