@@ -12,7 +12,10 @@
             <option v-for="n in 12" value={{n+1}}>{{n+1}}</option>
         </select>
         <div class="mod mod-daily">
-            <div class="unit unit-daily" v-for="n in allDay" v-on:click="onSelectDaily(n+1)">{{n+1}}</div>
+            <div 
+                v-for="n in allDay" v-on:click="onSelectDaily(n+1)"
+                v-bind:class="n==day ? classA : classB"
+            >{{n+1}}</div>
         </div>
         <div class="clear"></div>
         <div class="mod mod-content">
@@ -28,7 +31,9 @@
                 year: (new Date()).getFullYear(),
                 month: (new Date()).getMonth() + 1,
                 day: (new Date()).getDate(),
-                dailyContent: '请选择日期'
+                dailyContent: '请选择日期',
+                classA: ['unit', 'unit-daily', 'unit-daily-active'],
+                classB: ['unit', 'unit-daily']
             }
         },
         computed: {
@@ -58,6 +63,7 @@
 
             },
             onSelectDaily: function(day){
+                this.$set('day', day-1);
                 let year = this.year,
                     month = this.month < 10 ? '0' + this.month : this.month;
 
