@@ -2,3 +2,4 @@ config.json
 store/doc
 node_modules
 bower_components
+dist
