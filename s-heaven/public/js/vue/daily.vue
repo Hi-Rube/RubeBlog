@@ -63,7 +63,7 @@
 
             },
             onSelectDaily: function(day){
-                this.$set('day', day-1);
+                this.$set('day', day);
                 let year = this.year,
                     month = this.month < 10 ? '0' + this.month : this.month;
 
