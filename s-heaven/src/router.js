@@ -25,10 +25,10 @@ export default (router)=>{
 
     router.get('/getDailyFromGithub', function *(){
         try{
-            script.getDailyFromGithub();
+            getDailyFromGithub();
             this.body = 'ok';
         } catch(e){
-            this.bodu = 'error';
+            this.body = 'error';
         }
     });
 
